@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+.board {
+    display: grid;
+    grid-template-rows: 250px 250px 250px;
+    grid-template-columns: 250px 250px 250px;
+}
+
+.box {
+    padding:40px;
+    border: 3px solid black;
+
+}
+.red {
+    background: red;
+}
+.blue{
+    background:blue;
+}
