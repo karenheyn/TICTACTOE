@@ -1,6 +1,7 @@
 const box = document.querySelectorAll('.box');
 const board = document.querySelector('.board');
-const gameCount = [];
+player1Score = 0
+player2Score = 0
 const winningCombinations = [
     [0, 1, 2],
     [3, 4, 5],
@@ -13,9 +14,7 @@ const winningCombinations = [
 ]
 let player1 =[]
 let player2 =[]
-console.log(board)
-console.log(gameCount)
-console.log(box)
+let MatchCheck = []
 color = 'red'
 
 for (let i = 0; i < box.length; i++) {
@@ -27,14 +26,50 @@ for (let i = 0; i < box.length; i++) {
             if (color == 'red') {
                 evt.target.style.backgroundColor = 'red'
                 color = 'blue'
-                player1.push(evt.target)
+                player1.push(evt.target.dataset.number)
+                console.dir(evt.target.dataset.number)
             } else if (color == 'blue') {
                 evt.target.style.backgroundColor = 'blue'
                 color = 'red'
-                player2.push(evt.target)
+                player2.push(evt.target.dataset.number)
+
                 
             }
         }
 
     })
+}
+function checkForWinner(){
+    if (box[0].style.backgroundColor && box[1].style.backgroundColor && box[2].style.backgroundColor === box[0].style.backgroundColor){
+       if(box[0].style.backgroundColor === 'red'){
+           player1Score++
+       }
+       if(box[0].style.backgroundColor === 'blue'){
+           player2Score++
+       }
+    }
+    if (box[3].style.backgroundColor && box[4].style.backgroundColor && box[5].style.backgroundColor === box[0].style.backgroundColor){
+        if(box[3].style.backgroundColor === 'red'){
+            player1Score++
+        }
+        if(box[3].style.backgroundColor === 'blue'){
+            player2Score++
+        }
+     }
+     if (box[6].style.backgroundColor && box[7].style.backgroundColor && box[8].style.backgroundColor === box[0].style.backgroundColor){
+        if(box[6].style.backgroundColor === 'red'){
+            player1Score++
+        }
+        if(box[6].style.backgroundColor === 'blue'){
+            player2Score++
+        }
+     }
+     if (box[0].style.backgroundColor && box[3].style.backgroundColor && box[6].style.backgroundColor === box[0].style.backgroundColor){
+        if(box[0].style.backgroundColor === 'red'){
+            player1Score++
+        }
+        if(box[0].style.backgroundColor === 'blue'){
+            player2Score++
+        }
+     }
 }
