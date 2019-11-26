@@ -148,6 +148,8 @@ button.addEventListener("click", function(evt) {
     evt.preventDefault();
     box[i].style.backgroundColor = "";
     box[i].dataset.isClicked = false;
+    player1 = [];
+    player2 = [];
   }
 });
 // button.addEventListener('click', function(evt){
